@@ -1,0 +1,81 @@
+{
+    "name": "csharp-net-sqlserver-rabbitmq",
+    "title": "Creating a data-driven CRUD microservice",
+    "type": "webservice",
+    "tech_stack": {
+        "architecture": {
+            "api_interface": {
+                "name": "rest"
+            },
+            "api_layer": {
+                "name": "system"
+            },
+            "api_audience": {
+                "name": "private"
+            },
+            "api_description": {
+                "name": "openapi",
+                "version": "3.0"
+            },
+            "pattern": {
+                "name": "event-driven"
+            }
+        },
+        "development": {
+            "language": { 
+                "name": "csharp",
+                "version": "",
+                "featured": true
+            },
+            "framework": { 
+                "name": "dotnet",
+                "version": "",
+                "featured": true
+            },
+            "sql": { 
+                "name": "sqlserver",
+                "version": "",
+                "featured": true
+            },
+            "messaging": {
+                "name": "rabbitmq",
+                "version": ""
+            },
+            "observability": {
+            },
+            "app_integration": {
+            }
+        },
+        "cicd": {
+            "code_repository": { 
+                "name": "github"
+            },
+            "ci_system": {
+                "name": "github-actions"
+            },
+            "build_tool": {
+                "name": "maven",
+                "version": ""
+            },
+            "code_quality": {
+                "name": "sonarqube"
+            },
+            "test_automation": {
+                "name": "postman"
+            },
+            "container_registry": {
+                "name": "dockerhub"
+            },
+            "package_repository": {
+                "name": "github-packages"
+            }
+        }
+    },
+    "developer": "",
+    "published": "",
+    "_links": {
+        "self": {
+            "href": "https://localhost:3000/api/software_templates/e941840a-188d-4f38-aa4d-57d1436e4a08"
+        }
+    }
+}

@@ -1,0 +1,89 @@
+{
+    "name": "java-springboot-postgresql-rabbitmq",
+    "title": "Building REST API with Spring Web and PostgreSQL",
+    "type": "webservice",
+    "tech_stack": {
+        "architecture": {
+            "api_interface": {
+                "name": "rest"
+            },
+            "api_layer": {
+                "name": "system"
+            },
+            "api_audience": {
+                "name": "private"
+            },
+            "api_description": {
+                "name": "openapi",
+                "version": "3.0"
+            },
+            "pattern": {
+                "name": "event-driven"
+            }
+        },
+        "development": {
+            "language": { 
+                "name": "java",
+                "version": "",
+                "featured": true
+            },
+            "framework": { 
+                "name": "springboot",
+                "version": "",
+                "featured": true
+            },
+            "web": {
+                "name": "springmvc"
+            },
+            "sql": { 
+                "name": "postgresql",
+                "version": "",
+                "featured": true
+            },
+            "nosql": {
+                "name": "redis",
+                "version": ""
+            },
+            "messaging": {
+                "name": "rabbitmq",
+                "version": ""
+            },
+            "observability": {
+                "name": "datadog"
+            }
+        },
+        "cicd": {
+            "code_repository": { 
+                "name": "github"
+            },
+            "ci_system": {
+                "name": "travisci"
+            },
+            "build_tool": {
+                "name": "",
+                "version": ""
+            },
+            "code_quality": {
+                "name": "",
+                "version": ""
+            },
+            "test_automation": {
+                "name": "",
+                "version": ""
+            },
+            "container_registry": {
+                "name": "dockerhub"
+            },
+            "package_repository": {
+                "name": "helm"
+            }
+        }
+    },
+    "developer": "",
+    "published": "",
+    "_links": {
+        "self": {
+            "href": "https://localhost:3000/api/software_templates/d620cd55-86ed-433d-b488-6c3a40c1140f"
+        }
+    }
+}

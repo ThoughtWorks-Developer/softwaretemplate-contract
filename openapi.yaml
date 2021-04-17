@@ -1,0 +1,241 @@
+openapi: 3.0.2
+
+info:
+  title: Software Template API
+  version: v1
+  description: Reads and writes Software Templates
+  license:
+    name: Apache License, Version 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  contact:
+    name: ThoughtWorks
+    url: https://thoughtworks.com
+    
+servers:
+  - url: 'https://my-json-server.typicode.com/ThoughtWorks-Developer/softwaretemplate-contract'
+
+tags:
+  - name: Technologies
+    description: |
+      Add your description here
+  - name: Software Templates
+    description: |
+      Add your description here
+  
+paths:
+  /software_templates:
+    get:
+      tags: 
+      - Software Templates
+      summary: Get list of software templates
+      description: Add description details here
+      operationId: getSoftwareTemplateList
+      
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SoftwareTemplateResource'
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401Unauthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+        '503':
+          $ref: '#/components/responses/503ServiceUnavailable'
+    post:
+      tags: 
+      - Software Templates
+      summary: Create new software template
+      description: Add description details here
+      operationId: createSoftwareTemplate
+
+      requestBody:
+        description: a new software template object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SoftwareTemplate'
+      
+      responses:
+        '201':
+          description: Created      
+  /software_templates/{template_id}:
+    get:
+      tags: 
+      - Software Templates
+      summary: Get software template details
+      description: Gets the latest version of the specified software template.
+      operationId: getSoftwareTemplateDetails
+      parameters:
+        - $ref: '#/components/parameters/SoftwareTemplateID'
+      responses:
+        '200':
+          description: OK
+          content:
+            'application/hal+json':
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/SoftwareTemplateResource'
+    patch:
+      tags: 
+      - Software Templates
+      summary: Update software template
+      description: Add description details here
+      operationId: updateSoftwareTemplate
+      parameters:
+        - $ref: '#/components/parameters/SoftwareTemplateID'
+      requestBody:
+        description: Software Template object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SoftwareTemplate'
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags: 
+      - Software Templates
+      summary: Delete software template
+      description: Add description details here
+      operationId: deleteSoftwareTemplate
+      parameters:
+        - $ref: '#/components/parameters/SoftwareTemplateID'
+      responses:
+        '204':
+          description: OK
+components:
+  parameters:
+    SoftwareTemplateID:
+      name: template_id
+      description: The ID of the software template to retrieve
+      schema:
+        type: string
+      required: true
+      in: path
+      example: 8d1cd247-a196-426a-b9dd-1c7b8d37da2a
+  
+  responses:
+    '400BadRequest':
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error: Bad request
+            description: Missing required parameter.
+
+    '401Unauthorized':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error: Unauthorized
+            description: You are not authorized to view this resource
+
+    '403Forbidden':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error: Forbidden
+            description: You are forbidden from accessing this resource
+
+    '404NotFound':
+      description: Not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error: Not found
+            description: Resource Not found.
+      
+    '500InternalServerError':
+      description: Internal Server Error
+      content:
+        application/json:
+          example:
+            error: Internal server error
+            description: An unexpected error occurred
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    
+    '503ServiceUnavailable':
+      description: Service unavailable
+      content:
+        application/json:
+          example:
+            error: Service unavailable
+            description: Server is not ready to handle the request.
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    
+  schemas:
+    SoftwareTemplate:
+      type: object
+      properties:
+        name:
+          type: string
+        title:
+          type: string
+        subtitle:
+          type: string
+        description:
+          type: string
+        image:
+          type: string
+          format: url
+        version:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+    SoftwareTemplateResource:
+      type: object
+      required:
+        - _links
+      allOf:
+        - $ref: '#/components/schemas/SoftwareTemplate'
+      properties:
+        _links:
+          $ref: '#/components/schemas/SelfLink'
+    SelfLink:
+        type: object
+        required:
+          - self
+        properties:
+          self:
+            $ref: '#/components/schemas/ResourceLink'
+    ResourceLink:
+      type: object
+      required:
+        - href
+      properties:
+        href:
+          type: string
+          format: uri
+          description: The resource’s fully qualified location URL.
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+        description:
+          type: string

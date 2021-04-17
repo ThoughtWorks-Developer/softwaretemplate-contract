@@ -1,0 +1,83 @@
+{
+    "name": "golang-gokit-cassandra-rabbitmq",
+    "title": "Building a microservice with Golang and Go-Kit",
+    "type": "webservice",
+    "tech_stack": {
+        "architecture": {
+            "api_interface": {
+                "name": "rest"
+            },
+            "api_layer": {
+                "name": "system"
+            },
+            "api_audience": {
+                "name": "private"
+            },
+            "api_description": {
+                "name": "openapi",
+                "version": "3.0"
+            },
+            "pattern": {
+                "name": "event-driven"
+            }
+        },
+        "development": {
+            "language": { 
+                "name": "golang",
+                "version": "",
+                "featured": true
+            },
+            "framework": { 
+                "name": "gokit",
+                "version": "",
+                "featured": true
+            },
+            "nosql": { 
+                "name": "cassandra",
+                "version": "",
+                "featured": true
+            },
+            "messaging": {
+                "name": "rabbitmq",
+                "version": ""
+            },
+            "observability": {
+            },
+            "app_integration": {
+            }
+        },
+        "cicd": {
+            "code_repository": { 
+                "name": "github"
+            },
+            "ci_system": {
+                "name": "travisci"
+            },
+            "build_tool": {
+                "name": "",
+                "version": ""
+            },
+            "code_quality": {
+                "name": "",
+                "version": ""
+            },
+            "test_automation": {
+                "name": "",
+                "version": ""
+            },
+            "container_registry": {
+                "name": "dockerhub"
+            },
+            "package_repository": {
+                "name": "helm"
+            }
+        }
+    },
+    "developer": "",
+    "published": "",
+    "_links": {
+        "self": {
+            "href": "https://localhost:3000/api/software_templates/84a78a01-ecb9-4312-b155-14959fc1cc07"
+        }
+    }
+}

@@ -1,0 +1,82 @@
+{
+  "name": "python-connexion-mongodb-rabbitmq",
+  "title": "Crafting effective microservices in Python",
+  "type": "webservice",
+  "architecture": {
+    "api_interface": {
+      "name": "rest"
+    },
+    "api_layer": {
+      "name": "system"
+    },
+    "api_audience": {
+      "name": "private"
+    },
+    "api_description": {
+      "name": "openapi",
+      "version": "3.0"
+    },
+    "pattern": {
+      "name": "event-driven"
+    }
+  },
+  "development": {
+    "language": {
+      "name": "python",
+      "version": "3.9.4",
+      "featured": true
+    },
+    "framework": {
+      "name": "connexion",
+      "version": "2.0",
+      "featured": true
+    },
+    "nosql": {
+      "name": "mongodb",
+      "version": "3.6",
+      "featured": true
+    },
+    "messaging": {
+      "name": "rabbitmq",
+      "version": "3.7.6"
+    },
+    "observability": {},
+    "app_integration": {}
+  },
+  "cicd": {
+    "code_repository": {
+      "name": "github"
+    },
+    "ci_system": {
+      "name": "travisci"
+    },
+    "build_tool": {
+      "name": "pyb",
+      "version": "0.12"
+    },
+    "code_quality": {
+      "name": "",
+      "version": ""
+    },
+    "test_automation": {
+      "name": "postman",
+      "version": ""
+    },
+    "container_registry": {
+      "name": "dockerhub"
+    },
+    "package_repository": {
+      "name": "helm"
+    },
+    "communication_tool": {
+        "name": "slack"
+    }
+  },
+  "developer": "",
+  "published": "",
+  "_links": {
+    "self": {
+      "href": "https://localhost:3000/api/software_templates/6e13400a-74ac-4e63-b554-71c733d69935"
+    }
+  }
+}
