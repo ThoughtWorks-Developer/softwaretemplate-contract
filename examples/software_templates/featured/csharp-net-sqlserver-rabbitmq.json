@@ -15,7 +15,7 @@
             },
             "api_description": {
                 "name": "openapi",
-                "version": "3.0"
+                "version": "3.0.2"
             },
             "pattern": {
                 "name": "event-driven"

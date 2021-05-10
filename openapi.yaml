@@ -15,9 +15,6 @@ servers:
   - url: 'https://my-json-server.typicode.com/ThoughtWorks-Developer/softwaretemplate-contract'
 
 tags:
-  - name: Technologies
-    description: |
-      Add your description here
   - name: Software Templates
     description: |
       Add your description here
@@ -232,6 +229,7 @@ components:
           type: string
           format: uri
           description: The resource’s fully qualified location URL.
+          example: '/software_templates/d620cd55-86ed-433d-b488-6c3a40c1140f'
     ErrorResponse:
       type: object
       properties:

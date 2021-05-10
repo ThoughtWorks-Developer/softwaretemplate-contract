@@ -1,10 +1,10 @@
 
-## Run Locally
+## Creating a mock data
 
 ### Combine Technology data
 
 ```
-jq -s . examples/featured/*.json > featured.json
+jq -n '{ software_templates: [ inputs ] | add }' examples/featured/*.json > featured.json
 ```
 
 jq -n '{ integrations: [ inputs ] | add }' integrations/*.json > integrations.json
